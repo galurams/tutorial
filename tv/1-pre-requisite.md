@@ -19,6 +19,10 @@ sudo apt install virtualbox virtualbox-ext-pack
 ```
 Saat instalasi VirtualBox, akan muncul notifikasi pop-up pada terminal. Terima semua license agreementnya. 
 
+## Instalasi SSH
+```
+sudo apt install ssh
+```
 
 
 ## Set up load balancer node
