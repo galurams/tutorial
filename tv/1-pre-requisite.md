@@ -1,29 +1,21 @@
-# Set up a Highly Available Kubernetes Cluster using kubeadm
-Follow this documentation to set up a highly available Kubernetes cluster using __Ubuntu 20.04 LTS__.
+# Pre-Requisite
+Ikutilah panduan ini untuk melakukan instalasi beberapa software yang diperlukan pada OS __Ubuntu 20.04 LTS__.
 
-This documentation guides you in setting up a cluster with two master nodes, one worker node and a load balancer node using HAProxy.
+Panduan ini berguna untuk mempersiapkan environment PC/Laptop anda dalam melaksanakan praktikum.
 
-## Vagrant Environment
-|Role|FQDN|IP|OS|RAM|CPU|
-|----|----|----|----|----|----|
-|Load Balancer|loadbalancer.example.com|172.16.16.100|Ubuntu 20.04|1G|1|
-|Master|kmaster1.example.com|172.16.16.101|Ubuntu 20.04|2G|2|
-|Master|kmaster2.example.com|172.16.16.102|Ubuntu 20.04|2G|2|
-|Worker|kworker1.example.com|172.16.16.201|Ubuntu 20.04|1G|1|
-
-> * Password for the **root** account on all these virtual machines is **kubeadmin**
-> * Perform all the commands as root user unless otherwise specified
-
-## Pre-requisites
-If you want to try this in a virtualized environment on your workstation
-* Virtualbox installed
-* Vagrant installed
-* Host machine has atleast 8 cores
-* Host machine has atleast 8G memory
-
-## Bring up all the virtual machines
+## Instalasi Git
 ```
-vagrant up
+sudo apt install git
+```
+
+## Instalasi Net Tools
+```
+sudo apt install net-tools
+```
+
+## Instalasi VirtualBox dengan Extension Packnya
+```
+sudo apt install virtualbox virtualbox-ext-pack
 ```
 
 ## Set up load balancer node
