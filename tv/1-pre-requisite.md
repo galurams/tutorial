@@ -25,30 +25,19 @@ sudo apt install ssh
 ```
 
 
-## Set up load balancer node
-##### Install Haproxy
+## Instalasi OpenvSwitch
+##### Updating System
 ```
-apt update && apt install -y haproxy
+apt update && apt upgrade -y
 ```
-##### Configure haproxy
-Append the below lines to **/etc/haproxy/haproxy.cfg**
-```
-frontend kubernetes-frontend
-    bind 172.16.16.100:6443
-    mode tcp
-    option tcplog
-    default_backend kubernetes-backend
+##### Install OpenvSwitch
 
-backend kubernetes-backend
-    mode tcp
-    option tcp-check
-    balance roundrobin
-    server kmaster1 172.16.16.101:6443 check fall 3 rise 2
-    server kmaster2 172.16.16.102:6443 check fall 3 rise 2
 ```
-##### Restart haproxy service
+sudo apt install openvswitch-switch
 ```
-systemctl restart haproxy
+##### Jalankan OVS Daemon service
+```
+sudo ovs-vswitchd
 ```
 
 ## On all kubernetes nodes (kmaster1, kmaster2, kworker1)
