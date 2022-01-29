@@ -17,6 +17,9 @@ sudo apt install net-tools
 ```
 sudo apt install virtualbox virtualbox-ext-pack
 ```
+Saat instalasi VirtualBox, akan muncul notifikasi pop-up pada terminal. Terima semua license agreementnya. 
+
+
 
 ## Set up load balancer node
 ##### Install Haproxy
