@@ -35,9 +35,14 @@ sudo apt-get update && apt-get upgrade -y
 ```
 sudo apt install openvswitch-switch
 ```
-##### Jalankan OVS Daemon service
+##### Jalankan OVS Daemon service (Jika Service Belum Berjalan)
 ```
 sudo ovs-vswitchd
 ```
+##### Verifikasi Instalasi 
+```
+sudo ovs-vsctl show
+```
+Seharusnya output terminal menujukkan versi OVS dan interface yang telah dibuat (jika ada)
 
 Have Fun!!
