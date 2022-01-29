@@ -28,7 +28,7 @@ sudo apt install ssh
 ## Instalasi OpenvSwitch
 ##### Updating System
 ```
-apt update && apt upgrade -y
+sudo apt-get update && apt-get upgrade -y
 ```
 ##### Install OpenvSwitch
 
