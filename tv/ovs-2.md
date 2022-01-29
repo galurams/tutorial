@@ -66,7 +66,7 @@ route -n
 ```
 ip tuntap add mode tap vport1
 ```
-Perintah tersebut akan menambahkan virtual port pada bridge sistel dengan nama vport1. Buatlah virtual port yang kedua dengan nama vport2!!
+Perintah tersebut akan menambahkan virtual port pada bridge sistel dengan nama vport1. Buatlah virtual port yang kedua dengan nama vport2
 ##### Menjalankan tap vport1
 ```
 ifconfig vport1 up
