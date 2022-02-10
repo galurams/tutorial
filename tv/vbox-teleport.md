@@ -24,11 +24,12 @@ Panduan ini akan membantu anda melakukan migrasi VM.
 VM dijalankan di PC1 lalu dimigrasi/teleport secara live dari PC1 menuju PC2 tanpa harus mematikan VM.
 
 ## Steps
-1. Jalankan VM di PC1. Setelah VM berjalan sempurna, masukkan perintah untuk menerima teleportation/migration di PC2.
-2. Jalankan VM di PC2
-3. Masukkan perintah migrasi di PC1
-4. Tunggu beberapa saat..
-5. Done
+1. Buatlah VM dengan konfigurasi yang sama persis di kedua PC menggunakan storage yang sama.
+2. Jalankan VM di PC1. Setelah VM berjalan sempurna, masukkan perintah untuk menerima teleportation/migration di PC2.
+3. Jalankan VM di PC2
+4. Masukkan perintah migrasi di PC1
+5. Tunggu beberapa saat..
+6. Done
 
 
 ## Perintah PC1
