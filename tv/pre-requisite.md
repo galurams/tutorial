@@ -45,4 +45,4 @@ sudo ovs-vsctl show
 ```
 Seharusnya output terminal menujukkan versi OVS dan interface yang telah dibuat (jika ada)
 
-Have Fun!!
+
