@@ -6,6 +6,19 @@ Panduan ini akan membantu anda melakukan migrasi VM.
 2. Konfigurasi VM pada VirtualBox harus sama persis
 3. VM harus mengakses storage yang sama. Artinya anda harus menyediakan shared storage, misal menggunakan samba.
 
+
+## Konfigurasi PC
+|Role|Migration Port|IP|OS|RAM|CPU|
+|----|----|----|----|----|----|
+|PC1|9999|192.168.0.102|Ubuntu 20.04 server|4G|2|
+|PC2|9999|192.168.0.106|Ubuntu 20.04 server|16G|2|
+
+## Konfigurasi VM
+|Nama VM|Port|IP|OS|RAM|CPU|
+|----|----|----|----|----|----|
+|U20|9999|10.0.0.1|Ubuntu 20.04 server|1G|1|
+
+
 ## Skenario
 VM dijalankan di PC1 lalu dimigrasi/teleport secara live dari PC1 menuju PC2 tanpa harus mematikan VM.
 
@@ -18,16 +31,24 @@ VM dijalankan di PC1 lalu dimigrasi/teleport secara live dari PC1 menuju PC2 tan
 
 
 ## Perintah PC1
-##### Perintah migrasi
+##### Syntax Migrasi
 ```
 vboxmanage controlvm namavm teleport --host alamatIP_host_tujuan --port isi_dengan_port --password isi_password
 ```
+##### Perintah migrasi
+```
+vboxmanage controlvm U20 teleport --192.168.0.106 --port 9999 --password aa
+```
 
 ## Perintah PC2
-##### Menerima migrasi
+##### Syntax Menerima migrasi
 ```
 VBoxManage modifyvm namavm --teleporter on --teleporterport isi_dengan_port --teleporterpassword isi_password
 ```
 
+##### Menerima migrasi
+```
+VBoxManage modifyvm U20 --teleporter on --teleporterport 9999 --teleporterpassword aa
+```
 
 
