@@ -1,0 +1,33 @@
+# Live Teleportation/migration VM dengan VirtualBox
+Panduan ini akan membantu anda melakukan migrasi VM.
+
+## Pre-Requisite
+1. Untuk menggunakan panduan ini, anda membutuhkan dua buah PC yang terhubung pada jaringan yang sama.
+2. Konfigurasi VM pada VirtualBox harus sama persis
+3. VM harus mengakses storage yang sama. Artinya anda harus menyediakan shared storage, misal menggunakan samba.
+
+## Skenario
+VM dijalankan di PC1 lalu dimigrasi/teleport secara live dari PC1 menuju PC2 tanpa harus mematikan VM.
+
+## Steps
+1. Jalankan VM di PC1. Setelah VM berjalan sempurna, masukkan perintah untuk menerima teleportation/migration di PC2.
+2. Jalankan VM di PC2
+3. Masukkan perintah migrasi di PC1
+4. Tunggu beberapa saat..
+5. Done
+
+
+## Perintah PC1
+##### Perintah migrasi
+```
+vboxmanage controlvm namavm teleport --host alamatIP_host_tujuan --port isi_dengan_port --password isi_password
+```
+
+## Perintah PC2
+##### Menerima migrasi
+```
+VBoxManage modifyvm namavm --teleporter on --teleporterport isi_dengan_port --teleporterpassword isi_password
+```
+
+
+
