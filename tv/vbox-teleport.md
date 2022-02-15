@@ -11,8 +11,8 @@ Panduan ini akan membantu anda melakukan migrasi VM.
 ## Konfigurasi PC
 |Role|Migration Port|IP|OS|RAM|CPU|
 |----|----|----|----|----|----|
-|PC1|9999|192.168.0.102|Ubuntu 20.04 server|4G|2|
-|PC2|9999|192.168.0.106|Ubuntu 20.04 server|16G|2|
+|PC1|9999|192.168.0.102|Windows 10|4G|2|
+|PC2|9999|192.168.0.106|Ubuntu 20.04|16G|2|
 
 ## Konfigurasi VM
 |Nama VM|Port|IP|OS|RAM|CPU|
