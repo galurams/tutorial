@@ -3,8 +3,8 @@ Panduan ini akan membantu anda melakukan migrasi VM.
 
 ## Pre-Requisite
 1. Untuk menggunakan panduan ini, anda membutuhkan dua buah PC yang terhubung pada jaringan yang sama.
-2. Konfigurasi VM pada VirtualBox harus sama persis
-3. VM harus mengakses storage yang sama. Artinya anda harus menyediakan shared storage, misal menggunakan samba.
+2. VM harus mengakses storage yang sama. Artinya anda harus menyediakan shared storage, misal menggunakan samba.
+3. Konfigurasi VM pada VirtualBox harus identik
 4. Kedua PC sebaiknya terinstall PC dengan VirtualBox yang sama
 
 
