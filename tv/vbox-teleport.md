@@ -39,7 +39,7 @@ vboxmanage controlvm namavm teleport --host alamatIP_host_tujuan --port isi_deng
 ```
 ##### Perintah migrasi
 ```
-vboxmanage controlvm U20 teleport --192.168.0.106 --port 9999 --password aa
+vboxmanage controlvm U20 teleport --host 192.168.0.106 --port 9999 --password aa
 ```
 
 ## Perintah PC2
