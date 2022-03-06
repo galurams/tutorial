@@ -32,10 +32,11 @@ KVM acceleration can be used
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager
 ```
 
-##### Aktifkan libvirt daemon
+##### Cek status libvirt daemon
 ```
 sudo systemctl is-active libvirtd
 ```
+Jika status menunjukkan 'Not Connected', lakukan reboot
 
 ##### Agar dapat membuat dan mengatur VM, masukkan user libvirt dan kvm grup
 ```
