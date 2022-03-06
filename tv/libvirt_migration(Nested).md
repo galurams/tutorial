@@ -6,6 +6,8 @@ Panduan ini akan membantu anda melakukan migrasi VM secara live menggunakan KVM/
 2. Migrasi dilakukan di dalam sebuah PC yang sama, maka konfigurasi shared storage tidak perlu dilakukan
 3. Pada hypervisor yang digunakan misal VirtualBox, centang enable Nested VT-x/AMD-v
 
+Note: Walaupun VT-x/AMD-v tidak diaktifkan, kita masih dapat mengatur dan membuat VM dengan performance yang (mungkin) lebih lambat. Beberapa processor yang sudah diujicoba menunjukkan beberapa error ketika VT-x/AMD-v diaktifkan. 
+
 
 ## Instalasi QEMU/KVM
 Sebelum melakukan instalasi, cek kapablitas virtualization technology (VT) pada PC
@@ -35,7 +37,7 @@ sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils vir
 ```
 sudo systemctl is-active libvirtd
 ```
-Jika status menunjukkan 'Not Connected', lakukan reboot
+Jika status menunjukkan 'Not Connected', lakukan reboot.
 
 ##### Agar dapat membuat dan mengatur VM, masukkan user libvirt dan kvm grup
 ```
