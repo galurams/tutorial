@@ -12,7 +12,7 @@ Panduan ini akan membantu anda melakukan migrasi VM secara live menggunakan KVM/
 Sebelum melakukan instalasi, cek kapablitas virtualization technology (VT) pada PC
 ##### Install CPU Checker
 ```
-sudo apt install cpu checker
+sudo apt install cpu-checker
 ```
 
 ##### Cek kapabilitas VT
