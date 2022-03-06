@@ -4,8 +4,7 @@ Panduan ini akan membantu anda melakukan migrasi VM secara live menggunakan KVM/
 ## Environment
 1. OS PC1 menggunakan Ubuntu 20.04.xx LTS, OS PC2 menggunakan Ubuntu 18.04.xx LTS
 2. Migrasi dilakukan di dalam sebuah PC yang sama, maka konfigurasi shared storage tidak perlu dilakukan
-3. Pada hypervisor yang digunakan misal VirtualBox, enable Nested VT-x/AMD-v
-4. 
+3. Pada hypervisor yang digunakan misal VirtualBox, centang enable Nested VT-x/AMD-v
 
 
 ## Instalasi QEMU/KVM
@@ -46,4 +45,9 @@ sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
 ```
 
+## Step
+1. Pastikan QEMU/KVM sudah terinstalasi dengan baik di kedua PC
+2. Buat VM di salah satu PC
+3. Lakukan Migrasi VM.
 
+## Perintah Migrasi
