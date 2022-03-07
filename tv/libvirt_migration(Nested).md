@@ -87,4 +87,20 @@ Hostname = IP PC2
 ```
 
 ## Konfigurasi Shared Storage
+#### Install NFS Server
+```
+sudo apt install nfs-kernel-server
+```
+#### Ubah kepemilikan fileVM.qcow / fileVM.qcow2 (harus memiliki akses root)
+```
+chown nobody:nogroup /var/lib/libvirt/images/
+```
+#### Atur konfigurasi NFS Server
+```
+sudo nano /etc/exports
+```
+```
+/var/lib/libvirt/images *(rw,sync,no_subtree_check)
+```
+
 ## Migrasi Live
