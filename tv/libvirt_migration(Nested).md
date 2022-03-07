@@ -120,6 +120,6 @@ Mode = Direct
 Address = Alamat IP PC tujuan
 Port = 49152 (default)
 ```
-#### Agar migrasi dapat dilakukan dari kedua PC, konfigurasikan langkah konfigurasi network di kedua PC 
+#### Agar migrasi dapat dilakukan dari kedua PC, konfigurasikan langkah konfigurasi network dan konfigurasi storage di kedua PC 
 
 Have fun !!
