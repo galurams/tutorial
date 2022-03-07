@@ -114,11 +114,12 @@ sudo mount 192.168.18.11:/var/lib/libvirt/images /var/lib/libvirt/images
 
 
 ## Migrasi Live
-### Klik kanan pada VM yang sedang berjalan > Migrate
+#### Klik kanan pada VM yang sedang berjalan > Migrate
 ```
 Mode = Direct
 Address = Alamat IP PC tujuan
 Port = 49152 (default)
 ```
+#### Agar migrasi dapat dilakukan dari kedua PC, konfigurasikan langkah konfigurasi network di kedua PC 
 
 Have fun !!
