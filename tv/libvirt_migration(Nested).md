@@ -120,6 +120,12 @@ Mode = Direct
 Address = Alamat IP PC tujuan
 Port = 49152 (default)
 ```
+
+## Demo Live VM Migration (Nested VM)
+```
+https://youtu.be/m3B2eTfxZaY
+```
+
 #### Agar migrasi dapat dilakukan dari kedua PC, konfigurasikan langkah konfigurasi network dan konfigurasi storage di kedua PC 
 
 Have fun !!
