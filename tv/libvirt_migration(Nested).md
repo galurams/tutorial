@@ -50,6 +50,6 @@ sudo usermod -aG kvm $USER
 ## Step
 1. Pastikan QEMU/KVM sudah terinstalasi dengan baik di kedua PC
 2. Buat VM di salah satu PC
-3. Lakukan Migrasi VM.
+3. Lakukan Migrasi saat VM sedang berjalan.
 
 ## Perintah Migrasi
