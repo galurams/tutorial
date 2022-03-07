@@ -59,7 +59,32 @@ sudo usermod -aG kvm $USER
 Buatlah satu VM di salah satu PC/Host
 
 ## Konfigurasi Network
+#### Buat virtual interface br0 dan assign IP ke interface br0
+```
+sudo nano /etc/network/interfaces
+```
+```
+auto lo
+iface lo inet loopback
 
+auto enp0s3
+iface enp0s inet manual
+
+auto br0
+iface br0 inet static
+        address 192.168.18.12
+        netmask 255.255.255.0
+        gateway 192.168.18.1
+        bridge_ports enp0s3
+
+```
+## Hubungkan Hypervisor di PC1 dengan PC2
+#### File > Add Connection > centang connect to remote host
+```
+Method = SSH
+Username = username PC2
+Hostname = IP PC2
+```
 
 ## Konfigurasi Shared Storage
 ## Migrasi Live
