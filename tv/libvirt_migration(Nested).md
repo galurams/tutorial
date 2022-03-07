@@ -2,11 +2,20 @@
 Panduan ini akan membantu anda melakukan migrasi VM secara live menggunakan KVM/QEMU (libvirt) didalam VM (Nested VM).
 
 ## Environment
-1. OS PC1 menggunakan Ubuntu 20.04.xx LTS, OS PC2 menggunakan Ubuntu 18.04.xx LTS
-2. Migrasi dilakukan di dalam sebuah PC yang sama, maka konfigurasi shared storage tidak perlu dilakukan
+1. OS PC1 dan PC2 menggunakan Ubuntu 18.04.xx LTS
+2. Migrasi dilakukan di dalam sebuah PC yang sama (Nested VM migration)
 3. Pada hypervisor yang digunakan misal VirtualBox, centang enable Nested VT-x/AMD-v
+4. Insall SSH pada kedua PC (ssh-askpass)
 
 Note: Walaupun VT-x/AMD-v tidak diaktifkan, kita masih dapat mengatur dan membuat VM dengan performance yang (mungkin) lebih lambat. Beberapa processor yang sudah diujicoba menunjukkan beberapa error ketika VT-x/AMD-v diaktifkan. 
+
+
+## Step
+1. Instalasi. Pastikan QEMU/KVM sudah terinstalasi dengan baik di kedua PC
+2. Buat VM di salah satu PC
+3. Konfigurasi Network
+4. Konfigurasi Shared Storage
+5. Lakukan Migrasi saat VM sedang berjalan (live).
 
 
 ## Instalasi QEMU/KVM
@@ -47,9 +56,10 @@ sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
 ```
 
-## Step
-1. Pastikan QEMU/KVM sudah terinstalasi dengan baik di kedua PC
-2. Buat VM di salah satu PC
-3. Lakukan Migrasi saat VM sedang berjalan.
+Buatlah satu VM di salah satu PC/Host
 
-## Perintah Migrasi
+## Konfigurasi Network
+
+
+## Konfigurasi Shared Storage
+## Migrasi Live
