@@ -46,7 +46,7 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 sudo apt install openvswitch-switch
 ```
 
-##### Cek apakah OVS sudah berhasil di install
+##### Cek instalasi OVS
 ```
 sudo ovs-vsctl show
 ```
@@ -57,6 +57,52 @@ sudo ovs-vsctl show
     ovs_version: "2.9.8"
 ```
 
+##### 
+```
+
+```
+
+##### 
+```
+
+```
+
+##### 
+```
+
+```
+##### 
+```
+
+```
+##### 
+```
+
+```
+##### 
+```
+
+```
+##### 
+```
+
+```
+##### 
+```
+
+```
+##### 
+```
+
+```
+##### 
+```
+
+```
+##### 
+```
+
+```
 
 
 
