@@ -13,107 +13,53 @@ Sebelum melakukan instalasi OVS, disarankan untuk melakukan instalasi net-tools 
 sudo apt install net-tools
 ```
 
-##### Cek kapabilitas VT
+##### Cek interface
 ```
-kvm-ok
-```
-
-##### Respon yang diharapkan jika VT sudah aktif
-
-```
-INFO: /dev/kvm exists
-KVM acceleration can be used
+ifconfig
 ```
 
-##### Instalasi Qemu/KVM beserta dependencynya dan Virt Manager
-```
-sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager
-```
-
-##### Cek status libvirt daemon
-```
-sudo systemctl is-active libvirtd
-```
-Jika status menunjukkan 'Not Connected', lakukan reboot.
-
-##### Agar dapat membuat dan mengatur VM, masukkan user libvirt dan kvm grup
-```
-sudo usermod -aG libvirt $USER
-```
-```
-sudo usermod -aG kvm $USER
-```
-
-Buatlah satu VM di salah satu PC/Host
-
-## Konfigurasi Network
-#### Buat virtual interface br0 dan assign IP ke interface br0
-```
-sudo nano /etc/network/interfaces
-```
-```
-auto lo
-iface lo inet loopback
-
-auto enp0s3
-iface enp0s inet manual
-
-auto br0
-iface br0 inet static
-        address 192.168.18.12
-        netmask 255.255.255.0
-        gateway 192.168.18.1
-        bridge_ports enp0s3
+##### Respon cek interface
 
 ```
-## Hubungkan Hypervisor di PC1 dengan PC2
-#### File > Add Connection > centang connect to remote host
-```
-Method = SSH
-Username = username PC2
-Hostname = IP PC2
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.18.9  netmask 255.255.255.0  broadcast 192.168.18.255
+        inet6 fe80::5a6e:84f9:4528:1d99  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:d2:9e:38  txqueuelen 1000  (Ethernet)
+        RX packets 314038  bytes 436690037 (436.6 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 161979  bytes 15198101 (15.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 820  bytes 76964 (76.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 820  bytes 76964 (76.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
 ```
 
-## Konfigurasi Shared Storage
-#### Install NFS Server (PC1 dan PC2)
+##### Instalasi OVS
 ```
-sudo apt install nfs-kernel-server
-```
-#### Ubah kepemilikan fileVM.qcow / fileVM.qcow2 (PC1)
-```
-chown nobody:nogroup /var/lib/libvirt/images/
-```
-#### Atur konfigurasi NFS Server (PC1)
-```
-sudo nano /etc/exports
-```
-```
-/var/lib/libvirt/images *(rw,sync,no_subtree_check)
-```
-```
-service nfs-kernel-server restart
+sudo apt install openvswitch-switch
 ```
 
-#### Mount Storage di (PC2)
+##### Cek apakah OVS sudah berhasil di install
 ```
-sudo mount 192.168.18.11:/var/lib/libvirt/images /var/lib/libvirt/images
+sudo ovs-vsctl show
+```
+
+##### Respon jika OVS sudah berhasil di install
+```
+64db134b-b92b-4284-b6f6-ee7b7fe9216e
+    ovs_version: "2.9.8"
 ```
 
 
 
-## Migrasi Live
-#### Klik kanan pada VM yang sedang berjalan > Migrate
-```
-Mode = Direct
-Address = Alamat IP PC tujuan
-Port = 49152 (default)
-```
 
-## Demo Live VM Migration (Nested VM)
-```
-https://youtu.be/m3B2eTfxZaY
-```
 
-#### Agar migrasi dapat dilakukan dari kedua PC, konfigurasikan langkah konfigurasi network dan konfigurasi storage di kedua PC 
 
 Have fun !!
