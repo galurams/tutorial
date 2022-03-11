@@ -1,5 +1,5 @@
-# Membangun dan Mengkonfigurasi Virtual Switch
-Panduan ini akan membantu Anda untuk membangun virtual switch dan melakukan konfigurasi port agar dapat digunakan oleh VM.
+# Virtual Switch
+Panduan ini akan membantu Anda untuk membangun virtual switch dan melakukan konfigurasi port agar dapat digunakan oleh host/VM.
 
 ## Environment
 1. PC (OS Ubuntu 18.04.06 LTS)
