@@ -6,7 +6,7 @@ Panduan ini akan membantu Anda untuk membangun virtual switch dan melakukan konf
 2. 
 
 
-## Langkah-langkah
+## Steps
 Sebelum melakukan instalasi OVS, disarankan untuk melakukan instalasi net-tools untuk melakukan pengecekan interface jaringan
 ##### Install Net-tools
 ```
