@@ -1,9 +1,9 @@
-# Libvirt live VM Migration
+# Membangun dan Mengkonfigurasi Virtual Switch
 Panduan ini akan membantu Anda untuk membangun virtual switch dan melakukan konfigurasi port agar dapat digunakan oleh VM.
 
 ## Environment
-1. PC menggunakan OS Ubuntu 18.04.06 LTS
-2. 
+1. PC (OS Ubuntu 18.04.06 LTS)
+2. OVS
 
 
 ## Steps
